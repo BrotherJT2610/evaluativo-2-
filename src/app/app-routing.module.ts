@@ -1,3 +1,5 @@
+//EN ESTE MODULO DE RUTAS SE ENCUENTRA LAS RUTAS RELACIONADAS DIRECTAMENTE CON EL NAVBAR 
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
@@ -15,6 +17,9 @@ const routes: Routes = [
     },
     {
       path:"",loadChildren:()=>import('./modules/producto/producto.module').then(m=>m.ProductoModule)
+    },
+    {
+      path:"",loadChildren:()=>import('./modules/autentificacion/autentificacion.module').then(m=>m.AutentificacionModule)
     }
 ];
 
