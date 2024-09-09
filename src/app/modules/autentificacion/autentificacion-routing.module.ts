@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //IMPORTACION A LAS VISTAS DEL MODULO AUTENTIFICACION
-import { RegistroComponent } from './registro/registro.component';
-import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+import { RegistroComponent } from './pages/registro/registro.component';
+import { InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion.component';
 const routes: Routes = [
   {
     path:"registro",component:RegistroComponent
