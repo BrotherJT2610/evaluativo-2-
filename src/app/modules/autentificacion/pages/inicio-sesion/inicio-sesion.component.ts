@@ -7,13 +7,14 @@ import { Usuario } from 'src/app/models/usuario';
   styleUrls: ['./inicio-sesion.component.css']
 })
 export class InicioSesionComponent {
-  hide = true;
+  hide = true; //hide: Variable booleana que controla la visibilidad de la contraseña en el campo de entrada.
 
   // ####################################### LOCAL
   // Definimos la propiedad local para que guarde la colección
   public coleccionUsuariosLocal: Usuario[];
 
   // COLECCIÓN LOCAL DE USUARIOS CON INFORMACIÓN
+  //coleccionUsuariosLocal: Es una lista de usuarios (objetos de tipo Usuario) que simula una base de datos local. Se inicializa en el constructor con tres usuarios ficticios.
   constructor(){
     this.coleccionUsuariosLocal = [
       {
@@ -47,6 +48,7 @@ export class InicioSesionComponent {
 
   // ####################################### INGRESADO
   // Importamos la interfaz de usuario e inicializamos vacío
+  //usuarioIngresado: Es un objeto vacío que almacena los datos que el usuario introduce en el formulario.
   usuarioIngresado: Usuario = {
     uid: '',
     nombre: '',
@@ -58,7 +60,7 @@ export class InicioSesionComponent {
 
   // Función para el inicio de sesión
   iniciarSesion(){
-    // Las credenciales reciben la información que se envía desde la web
+    // Las credenciales reciben la información que se envía desde la web (lo que envia el usuario)
     const credenciales = {
       uid: this.usuarioIngresado.uid,
       nombre: this.usuarioIngresado.nombre,
@@ -68,10 +70,10 @@ export class InicioSesionComponent {
       password: this.usuarioIngresado.password
     }
 
-    // Repetitiva para recorrer la colección local
-    for(let i = 0; i < this.coleccionUsuariosLocal.length; i++){
-      // Constante que guarde la información de la posición actual de los objetos
-      const usuarioLocal = this.coleccionUsuariosLocal[i];
+    // Repetitiva para recorrer la colección local;                                                 //Método iniciarSesion():
+    for(let i = 0; i < this.coleccionUsuariosLocal.length; i++){                                    //Recorre la lista coleccionUsuariosLocal para buscar si hay algún usuario que coincida con los datos ingresados.
+      // Constante que guarde la información de la posición actual de los objetos                   //Si encuentra una coincidencia, muestra una alerta indicando que el inicio de sesión fue exitoso.
+      const usuarioLocal = this.coleccionUsuariosLocal[i];                                          //Si no coincide, muestra un mensaje de error.
 
       /*
       Comparando uno por uno los atributos del objeto local con el que ingresa el 
