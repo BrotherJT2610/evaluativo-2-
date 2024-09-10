@@ -5,26 +5,8 @@
         <i class="material-icons" style="font-size: 200px;">person</i>
         
         <mat-form-field appearance="fill">
-            <mat-label>Ingrese su nombre de usuario:</mat-label>
-            <input [(ngModel)]="usuarioIngresado.nombre" matInput placeholder="Ej: Pepito" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
-            <mat-label>Ingrese su apellido:</mat-label>
-            <input [(ngModel)]="usuarioIngresado.apellido" matInput placeholder="Ej: Peréz" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill">
             <mat-label>Ingrese su email:</mat-label>
             <input [(ngModel)]="usuarioIngresado.email" matInput placeholder="Ej: pepitoperez2022@gmail.com" required>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Seleccione su rol de usuario:</mat-label>
-            <select [(ngModel)]="usuarioIngresado.rol" matNativeControl required>
-              <option value="admin">Administrador</option>
-              <option value="vist">Visitante</option>
-            </select>
         </mat-form-field>
 
         <mat-form-field>
