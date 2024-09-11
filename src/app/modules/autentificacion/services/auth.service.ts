@@ -52,3 +52,4 @@ export class AuthService {
     return this.servicioFirestore.collection('usuarios', ref => ref.where('email', '==', email)).get().toPromise();
   }
 }
+
