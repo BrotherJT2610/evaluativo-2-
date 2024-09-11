@@ -30,6 +30,7 @@
                 <!-- mostrarEditar() recibe como parametro el producto seleccionado o iterado en esa fila -->
                 <button id="btn-edit" title="Editar" type="button" class="btn btn-outline-warning"
                 data-bs-toggle="modal" data-bs-target="#editarProducto" (click)="mostrarEditar(producto)">
+                <mat-icon>edit</mat-icon>
                 </button>
             </td>
 
@@ -152,9 +153,10 @@
                     <label class="form-label">Seleccione una categoría:</label>
                     <select class="form-control form-select" formControlName="categoria" aria-label="Default select example">
                         <option disabled selected>Elija una opción</option>
-                        <option value="alimentacion">Alimentación</option>
-                        <option value="indumentaria">Indumentaria</option>
-                        <option value="juguetes">Juguete</option>
+                        <option value="maquinas">Maquinas</option>
+                        <option value="cardio">Cardio</option>
+                        <option value="bancos">Bancos</option>
+
                     </select>
                 </div>
 

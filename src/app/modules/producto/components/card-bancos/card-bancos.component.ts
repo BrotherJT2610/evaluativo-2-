@@ -22,8 +22,11 @@ export class CardBancosComponent {
   ngOnInit(): void{
     this.servicioCrud.obtenerProducto().subscribe(producto => {
       this.coleccionProductos = producto;
+
+      // mostrar la colección actual de bancos
+      this.mostrarProductoBancos();
     })
-    // mostrar la colección actual de bancos
+
   }
 
   // Función para filtrar los productos que sean del tipo "bancos"
