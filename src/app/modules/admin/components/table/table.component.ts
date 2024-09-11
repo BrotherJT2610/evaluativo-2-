@@ -60,9 +60,14 @@ export class TableComponent {
       await this.servicioCrud.crearProducto(nuevoProducto)
       .then(producto => {
         alert("Ha agregado un nuevo producto con éxito :)");
+
+        // Limpiamos formulario para agregar nuevos productos
+        this.producto.reset();
       })
       .catch(error => {
         alert("Hubo un problema al agregar un nuevo producto :(");
+        
+        this.producto.reset();
       })
     }
   }

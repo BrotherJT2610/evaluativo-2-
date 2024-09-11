@@ -10,13 +10,20 @@ import { CardioComponent } from './pages/cardio/cardio.component';
 import { BancosComponent } from './pages/bancos/bancos.component';
 import { ProductoComponent } from './pages/producto/producto.component';
 
+//COMPONENTES LOCALES
+import { CardComponent } from './components/card/card.component';
+import { CardBancosComponent } from './components/card-bancos/card-bancos.component';
+
 
 @NgModule({
   declarations: [
     MaquinasComponent,
     CardioComponent,
     BancosComponent,
-    ProductoComponent
+    ProductoComponent,
+    CardComponent,
+    CardBancosComponent
+    
   ],
   imports: [
     CommonModule,
@@ -27,7 +34,10 @@ import { ProductoComponent } from './pages/producto/producto.component';
     ProductoComponent,
     CardioComponent,
     BancosComponent,
-    MaquinasComponent
+    MaquinasComponent,
+    CardComponent,
+    CardBancosComponent
+    
   ]
 })
 export class ProductoModule { }
