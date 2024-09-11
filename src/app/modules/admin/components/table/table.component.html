@@ -37,3 +37,66 @@
         </tr>
     </tbody>
 </table>
+
+
+<!-- BOTÓN PARA AGREGAR PRODUCTOS -->
+<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregarProducto">
+    Agregar un nuevo producto
+</button>
+
+<!-- MODAL PARA AGREGAR PRODUCTOS -->
+<div class="modal fade" id="agregarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- ENCABEZADO DEL MODAL -->
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ingrese un nuevo producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- CUERPO DEL MODAL -->
+            <div [formGroup]="producto" class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el nombre del producto:</label>
+                    <input class="form-control" type="text" formControlName="nombre" placeholder="Ej.: Banco Plano ">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese descripción del producto:</label>
+                    <input class="form-control" type="text" formControlName="descripcion" placeholder="Ej.:Banco De Pecho Pesas Plano Regulable Plegable ">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese el precio:</label>
+                    <input class="form-control" type="number" formControlName="precio" placeholder="...">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Seleccione una categoría:</label>
+                    <select class="form-control form-select" formControlName="categoria">
+                        <option selected>Elija una opción</option>
+                        <option value="maquinas">Maquinas</option>
+                        <option value="cardio">Cardio</option>
+                        <option value="bancos">Bancos</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese una imagen:</label>
+                    <input class="form-control" type="text" formControlName="imagen" placeholder="Ingrese vínculo de una imagen">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Ingrese texto alternativo:</label>
+                    <input class="form-control" type="text" formControlName="alt" placeholder="Ingrese un texto alternativo">
+                </div>
+            </div>
+
+            <!-- ACCIONES DEL MODAL -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Guardar</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
