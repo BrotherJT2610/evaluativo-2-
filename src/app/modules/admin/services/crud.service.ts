@@ -43,7 +43,10 @@ export class CrudService {
     return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
   }
   // EDITAR productos
-  
+  modificarProducto(idProducto: string, nuevaData: Producto){
+    // accedemos a la colección, buscamos por ID y actualizamos información
+    return this.database.collection('producto').doc(idProducto).update(nuevaData);
+  }
   // ELIMINAR productos
   eliminarProducto(idProducto: string){
     return new Promise((resolve, reject) => {
