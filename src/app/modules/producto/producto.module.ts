@@ -13,6 +13,8 @@ import { ProductoComponent } from './pages/producto/producto.component';
 //COMPONENTES LOCALES
 import { CardComponent } from './components/card/card.component';
 import { CardBancosComponent } from './components/card-bancos/card-bancos.component';
+import { CardMaquinasComponent } from './components/card-maquinas/card-maquinas.component';
+import { CardCardioComponent } from './components/card-cardio/card-cardio.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { CardBancosComponent } from './components/card-bancos/card-bancos.compon
     BancosComponent,
     ProductoComponent,
     CardComponent,
-    CardBancosComponent
+    CardBancosComponent,
+    CardMaquinasComponent,
+    CardCardioComponent
     
   ],
   imports: [
