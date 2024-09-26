@@ -16,7 +16,7 @@ h1 {
     margin-bottom: 20px; /* Añade un margen inferior de 20 píxeles */
     text-transform: uppercase; /* Convierte todo el texto a mayúsculas */
     letter-spacing: 2px; /* Añade un espaciado de 2 píxeles entre las letras */
-    background: linear-gradient(to right, #333333, #a3a3ff); /* Aplica un gradiente lineal de izquierda a derecha, desde #333333 a #a3a3ff */
+    background: linear-gradient(to right, #333333, #a80202); /* Aplica un gradiente lineal de izquierda a derecha */
     -webkit-background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (Webkit) */
     -moz-background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (Mozilla) */
     background-clip: text; /* Hace que el fondo del gradiente solo se aplique al texto (estándar) */
@@ -42,4 +42,7 @@ h1:hover {
     width: auto;
   }
   
+.imagen1 {
+    text-align: center;
+}
 

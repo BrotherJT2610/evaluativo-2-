@@ -9,7 +9,7 @@
   </mat-menu>
 
   <span>FitZone</span>
-    <button id="menuInicio" mat-button routerLink="/inicio"> <i class="fa fa-home icono_color" aria-hidden="true"></i> </button>
+    <button id="menuInicio" mat-button routerLink="/inicio"> <i class="fa fa-home icono_casa" aria-hidden="true"></i> </button>
 
   <!-- Menu desplegable: SECCION DE PRODUCTOS -->
   <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
@@ -23,7 +23,7 @@
   <span class="example-spacer"></span>
 
     <!-- Manejo del inicio (registro e inicio de sesión) y del cerrar sesión -->
-    <button mat-icon-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+    <button mat-icon-button [matMenuTriggerFor]="usuario"><i class="fa-solid fa-user icono_user"></i></button>
   <mat-menu #usuario="matMenu">
     <button mat-menu-item (click)="iniciar()" *ngIf="logueado" routerLink="/registro">Registrarse</button>
     <button mat-menu-item (click)="iniciar()" *ngIf="logueado" routerLink="/inicio-sesion">Iniciar sesión</button>
