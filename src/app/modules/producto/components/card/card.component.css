@@ -1,0 +1,154 @@
+.row {
+    display: flex;
+    justify-content: center; /* Centra las cards horizontalmente */
+    align-items: center; /* Centra las cards verticalmente */
+    flex-wrap: wrap; /* Permite que las cards se ajusten a múltiples filas si es necesario */
+    gap: 2rem; /* Espacio entre las cards */
+    padding: 2rem; /* Espaciado interno alrededor del contenedor */
+}
+
+.card {
+    background-color: #F9F9F9; /* Fondo neutro para que el contenido destaque */
+    border-radius: 15px; /* Bordes redondeados para un look más suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera alrededor de las cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para cambios al hacer hover */
+    padding: 1rem; /* Espacio interno en la card */
+    max-width: 300px; /* Limita el tamaño máximo de la card */
+    text-align: center; /* Centra todo el contenido dentro de la card */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Levanta la card ligeramente al hacer hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra para darle más énfasis al hover */
+
+    background-color: #E0E0FF; /* Cambia el color de fondo al hacer hover */
+}
+
+.card img {
+    width: 100%; /* Ajusta la imagen al ancho de la card */
+    height: 200px; /* Establece una altura fija */
+    object-fit: cover; /* Asegura que la imagen se recorte para llenar el contenedor sin distorsionarse */
+    border-radius: 15px 15px 15px 15px; /* Bordes redondeados solo en la parte superior de la imagen */
+}
+
+.card h1 {
+    font-size: 1.5rem; /* Tamaño de fuente grande para el título */
+    color: #333333; /* Color de texto gris oscuro para mejor legibilidad */
+    margin-bottom: 1rem; /* Espacio debajo del título */
+    max-height: 3rem; /* Altura máxima para el título */
+    overflow: hidden; /* Oculta el texto que exceda la altura máxima */
+    text-overflow: ellipsis; /* Añade puntos suspensivos al final del texto si es demasiado largo */
+}
+
+.card p {
+    font-size: 1rem; /* Tamaño estándar de fuente para el texto */
+    color: #666666; /* Color gris claro para el texto descriptivo */
+    margin-bottom: 1rem; /* Espacio debajo del texto */
+    max-height: 4rem; /* Altura máxima para el párrafo */
+    overflow: hidden; /* Oculta el texto que exceda la altura máxima */
+    text-overflow: ellipsis; /* Añade puntos suspensivos al final del texto si es demasiado largo */
+}
+
+.card button {
+    background-color: #7676FF; /* Color del botón igual al color del navbar */
+    color: white; /* Texto del botón en blanco para mejor contraste */
+    border: none; /* Sin borde en el botón */
+    padding: 0.7rem 1.5rem; /* Relleno del botón para hacerlo más grande y cómodo de presionar */
+    border-radius: 25px; /* Botones redondeados para un estilo más suave y moderno */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar que es clicable */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar de color */
+}
+
+.card button:hover {
+    background-color: #FF7676; /* Cambia a un color complementario al hacer hover en el botón */
+}
+
+/* MEDIA QUERYS PARA HACER RESPONSIVO */
+
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .card {
+        margin-bottom: 2rem;
+    }
+}
+
+
+/* ESTILOS PERSONALIZADOS PARA EL MODAL */
+.modal-content {
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
+}
+
+.modal-header {
+    background-color: #7676FF; /* Color de fondo para el encabezado */
+    color: white; /* Color del texto en el encabezado */
+    border-bottom: none; /* Sin borde inferior */
+    padding: 1.5rem; /* Espaciado interno */
+}
+
+.modal-title {
+    font-size: 1.75rem; /* Tamaño de fuente más grande para el título */
+    margin: 0; /* Sin margen */
+}
+
+.btn-close {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    color: white; /* Color del icono de cierre */
+    font-size: 1.25rem; /* Tamaño del icono de cierre */
+}
+
+.modal-body {
+    padding: 2rem; /* Espaciado interno */
+    text-align: center; /* Centra el contenido */
+}
+
+.modal-body img {
+    max-width: 100%; /* La imagen se ajusta al ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    margin-bottom: 1rem; /* Espacio debajo de la imagen */
+}
+
+.modal-footer {
+    background-color: #f1f1f1; /* Color de fondo para el pie del modal */
+    border-top: none; /* Sin borde superior */
+    padding: 1.5rem; /* Espaciado interno */
+    display: flex; /* Flexbox para alinear los botones */
+    justify-content: space-between; /* Espacio entre los botones */
+}
+
+.modal-footer .btn {
+    border-radius: 25px; /* Bordes redondeados para los botones */
+    padding: 0.7rem 1.5rem; /* Relleno para los botones */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.modal-footer .btn-primary {
+    background-color: #7676FF; /* Color del botón principal */
+    border: none; /* Sin borde */
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #5757d1; /* Color del botón principal al hacer hover */
+}
+
+.modal-footer .btn-secondary {
+    background-color: #cccccc; /* Color del botón secundario */
+    border: none; /* Sin borde */
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #aaaaaa; /* Color del botón secundario al hacer hover */
+}
