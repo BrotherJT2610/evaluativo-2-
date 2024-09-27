@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { CrudService } from '../../services/crud.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -59,14 +59,20 @@ export class TableComponent {
 
       await this.servicioCrud.crearProducto(nuevoProducto)
       .then(producto => {
-        alert("Ha agregado un nuevo producto con éxito :)");
-
+        Swal.fire({
+          title: "Bien Hecho!",
+          text: "Ha agregado un nuevo producto con éxito!",
+          icon: "success"
+        });
         // Limpiamos formulario para agregar nuevos productos
         this.producto.reset();
       })
       .catch(error => {
-        alert("Hubo un problema al agregar un nuevo producto :(");
-        
+        Swal.fire({
+          title: "ERROR",
+          text: "Hubo un problema al agregar un nuevo producto",
+          icon: "error"
+        });
         this.producto.reset();
       })
     }
@@ -85,10 +91,18 @@ export class TableComponent {
     borrarProducto(){
       this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto)
       .then(respuesta => {
-        alert("El producto se ha eliminado correctamente.")
+        Swal.fire({
+          title: "Hecho!",
+          text: "El producto se ha eliminado correctamente.",
+          icon: "success"
+        });
       })
       .catch(error => {
-        alert("No se ha podido eliminar el producto \n"+error);
+        Swal.fire({
+          title: "ERROR",
+          text: "No se ha podido eliminar el producto \n"+error,
+          icon: "error"
+        });
       })
     }
 
@@ -122,10 +136,20 @@ export class TableComponent {
 
     this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto, datos)
     .then(producto => {
-      alert("El producto fue modificado con éxito.");
+      Swal.fire({
+        title: "Bien ahí!",
+        text: "El producto fue modificado con éxito.",
+        icon: "success"
+      });
+      
     })
     .catch(error => {
       alert("Hubo un problema al modificar el producto.");
+      Swal.fire({
+        title: "ERROR",
+        text: "Hubo un problema al modificar el producto.",
+        icon: "error"
+      });
     })
   }
 }

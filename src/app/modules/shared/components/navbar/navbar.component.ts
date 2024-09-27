@@ -38,9 +38,9 @@ export class NavbarComponent {
       let checked: boolean = toggle.checked;
       document.body.classList.toggle('dark',checked)
       if(checked){
-        label_toggle!.innerHTML ='<i class="fa-solid fa-sun"></i>';
+        label_toggle!.innerHTML ='<i class="fa-solid fa-sun iconoPiola oscuro"></i>';
       }else{
-        label_toggle!.innerHTML ='<i class="fa-solid fa-moon"></i>'
+        label_toggle!.innerHTML ='<i class="fa-solid fa-moon iconoPiola oscuro"></i>'
       }
     }
   }

@@ -1,22 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 /*Estilos Para Modo Oscuro*/
-body{
+body {
     transition: all 1.5 ease;
 }
-#toggle{
+
+#toggle {
     display: none;
 }
-#label_toggle{
+
+#label_toggle {
     position: static;
     cursor: pointer;
 }
-.dark{
-    background-color: black;
+
+.dark {
+    background-color: rgb(0, 0, 0);
     color: white;
     transition: all 1.5 ease;
 }
-*{
-    color: black;
+
+.iconoPiola {
+    color: white;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.oscuro {
+
+    margin-top: 6px;
+    /* Espacio encima de este elemento */
+    padding: 1px 1px;
+    /* Espacio vertical de 10px y horizontal de 20px */
+
+
+    width: 50px;
+    /* Aumenta el ancho */
+    height: 25px;
+    /* Aumenta la altura */
+
+}
+

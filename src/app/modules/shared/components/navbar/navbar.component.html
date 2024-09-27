@@ -1,40 +1,41 @@
-<mat-toolbar>
-  <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="secciones">
-    <mat-icon>menu</mat-icon>
-  </button>
 
-  <mat-menu #secciones="matMenu">
-    <button mat-menu-item routerLink="/inicio">Inicio</button>
-    <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
-  </mat-menu>
+ <mat-toolbar>
+    <button id="menuSecciones" mat-icon-button class="example-icon" [matMenuTriggerFor]="secciones">
+      <mat-icon>menu</mat-icon>
+    </button>
 
-  <span  ><img class="logo" src="./assets/logo_piola.png"></span>
-    <button id="menuInicio" mat-button routerLink="/inicio"> <i class="fa fa-home icono_casa" aria-hidden="true"></i> </button>
+    <mat-menu #secciones="matMenu">
+      <button mat-menu-item routerLink="/inicio">Inicio</button>
+      <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
+    </mat-menu>
 
-  <!-- Menu desplegable: SECCION DE PRODUCTOS -->
-  <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
-  <mat-menu #producto="matMenu">
-    <button mat-menu-item routerLink="/producto">General</button>
-    <button mat-menu-item routerLink="/maquinas">Maquinas</button>
-    <button mat-menu-item routerLink="/bancos">Bancos</button>
-    <button mat-menu-item routerLink="/cardio">Cardio</button>
-  </mat-menu>
+    <span><img class="logo" src="./assets/logo_piola2.png"></span>
+      <button id="menuInicio" mat-button routerLink="/inicio"> <i class="fa fa-home icono_casa iconoPiola" aria-hidden="true"></i> </button>
 
-  <span class="example-spacer"></span>
+    <!-- Menu desplegable: SECCION DE PRODUCTOS -->
+    <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
+    <mat-menu #producto="matMenu">
+      <button mat-menu-item routerLink="/producto">General</button>
+      <button mat-menu-item routerLink="/maquinas">Maquinas</button>
+      <button mat-menu-item routerLink="/bancos">Bancos</button>
+      <button mat-menu-item routerLink="/cardio">Cardio</button>
+    </mat-menu>
 
-    <!-- Manejo del inicio (registro e inicio de sesión) y del cerrar sesión -->
-    <button mat-icon-button [matMenuTriggerFor]="usuario"><i class="fa-solid fa-user icono_user"></i></button>
-  <mat-menu #usuario="matMenu">
-    <button mat-menu-item (click)="iniciar()" *ngIf="logueado" routerLink="/registro">Registrarse</button>
-    <button mat-menu-item (click)="iniciar()" *ngIf="logueado" routerLink="/inicio-sesion">Iniciar sesión</button>
-    <button mat-menu-item (click)="cerrarSesion()" *ngIf="deslogueado">Cerrar Sesión</button>
-  </mat-menu>
+    <span class="example-spacer"></span>
 
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>shopping_cart</mat-icon>
-  </button>
+      <!-- Manejo del inicio (registro e inicio de sesión) y del cerrar sesión -->
+      <button mat-icon-button [matMenuTriggerFor]="usuario" class="iconoPiola"><mat-icon><i class="fa-solid fa-user iconoPiola"></i></mat-icon></button>
+    <mat-menu #usuario="matMenu">
+      <button mat-menu-item (click)="iniciar()" *ngIf="logueado" routerLink="/registro">Registrarse</button>
+      <button mat-menu-item (click)="iniciar()" *ngIf="logueado" routerLink="/inicio-sesion">Iniciar sesión</button>
+      <button mat-menu-item (click)="cerrarSesion()" *ngIf="deslogueado">Cerrar Sesión</button>
+    </mat-menu>
 
-    <!--Label Para Modo Oscuro-->
-    <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>
-    <input type="checkbox" id="toggle" (click)="cambiarFondo()">
-</mat-toolbar>     
+    <button mat-icon-button class="example-icon favorite-icon iconoPiola" aria-label="Example icon-button with heart icon">
+      <mat-icon class="iconoPiola"><i class="fa-solid fa-cart-shopping"></i></mat-icon>
+    </button>
+
+      <!--Label Para Modo Oscuro-->
+      <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon iconoPiola oscuro"></i></label>
+      <input type="checkbox" id="toggle" (click)="cambiarFondo()">
+  </mat-toolbar>     
