@@ -81,5 +81,15 @@ h1:hover {
 /*#################################### ESTILOS PARA imagen1 ####################################*/
 
 .imagen1 {
-    text-align: center;
+    background-color: black;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;    /* Centra verticalmente */
+    height: 30vh;         /* Ajusta la altura según sea necesario */
+}
+
+.imagen1 img {
+    max-width: 600px; /* Ajusta este valor al tamaño deseado */
+    width: 100%;      /* Asegura que la imagen no exceda el contenedor */
+    height: auto;    /* Mantiene la relación de aspecto */
 }
