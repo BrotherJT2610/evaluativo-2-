@@ -1,11 +1,29 @@
 .container{
     display: flex;
-    padding: 10px;
+    max-width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
     text-align: center;
     justify-content: center;
 }
 
+
 .boton{
     width: 120px;
     margin: auto;
+    background-color: #7676FF; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 4px;
 }
+
+.boton:hover {
+    background-color: #5a5ad3; /* Color al pasar el ratón */
+}
+
+

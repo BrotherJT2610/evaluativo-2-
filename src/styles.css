@@ -10,6 +10,19 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+/*Iconos*/
+
+.iconoPiola {
+    color: white;
+}
+.boton_inicio {
+    color: white;
+}
+
+#menuSecciones {
+    color: white;
+}
+
 /*Estilos Para Modo Oscuro*/
 body {
     transition: all 1.5 ease;
@@ -29,11 +42,6 @@ body {
     color: white;
     transition: all 1.5 ease;
 }
-
-.iconoPiola {
-    color: white;
-}
-
 .oscuro {
 
     margin-top: 6px;

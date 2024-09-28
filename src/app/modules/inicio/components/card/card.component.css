@@ -1,21 +1,23 @@
 /*#################################### MEDIA QUERYS PARA HACER RESPONSIVO LAS CARDS DEL INICIO ####################################*/
 
-@media (max-width: 768px) {
-    .card {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
+@media (min-width: 360px) and (max-width:760px){
     .row {
-        flex-direction: column;
+        margin: 0;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
         align-items: stretch;
     }
 
-    .card {
+    .col {
         margin-bottom: 2rem;
+        flex-direction: column;
+        margin: 0;
+        display: flex;
+        justify-content: center;
     }
 }
+
 
 /*#################################### ESTILOS PARA LAS CARDS DE INICIO ####################################*/
 
