@@ -1,4 +1,4 @@
-<div class="container">
+<!--<div class="container">
     <div class="row">
         <h1>Inicia Sesión</h1>
 
@@ -20,4 +20,28 @@
 
         <button class="boton" mat-raised-button color="primary" (click)="iniciarSesion()">Iniciar Sesión</button>
     </div>
+</div>-->
+
+
+
+
+
+
+<div class="container">
+    <div class="login">
+        <div class="row">
+    
+        <div class="h1">Iniciar Sesion</div>
+    
+        <input placeholder="Email" id="email"  type="text"  [(ngModel)]="usuarioIngresado.email" matInput placeholder="Ingrese su email" required>
+               
+        <input [(ngModel)]="usuarioIngresado.password" matInput placeholder="Ingrese su contraseña" [type]="hide ? 'password' : 'text'" #input minlength="6" required>
+                    
+        <button class="btn" (click)="iniciarSesion()">Iniciar Sesión</button>
+        </div>
+    </div>
 </div>
+
+
+
+
