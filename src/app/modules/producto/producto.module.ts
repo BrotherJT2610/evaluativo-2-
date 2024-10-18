@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTabsModule } from '@angular/material/tabs';
 
 //ARCHIVO DE RUTAS
 import { ProductoRoutingModule } from './producto-routing.module';
@@ -15,6 +16,7 @@ import { CardComponent } from './components/card/card.component';
 import { CardBancosComponent } from './components/card-bancos/card-bancos.component';
 import { CardMaquinasComponent } from './components/card-maquinas/card-maquinas.component';
 import { CardCardioComponent } from './components/card-cardio/card-cardio.component';
+import { CarruselComponent } from './components/carrusel/carrusel.component';
 
 
 @NgModule({
@@ -26,12 +28,14 @@ import { CardCardioComponent } from './components/card-cardio/card-cardio.compon
     CardComponent,
     CardBancosComponent,
     CardMaquinasComponent,
-    CardCardioComponent
+    CardCardioComponent,
+    CarruselComponent
     
   ],
   imports: [
     CommonModule,
-    ProductoRoutingModule
+    ProductoRoutingModule,
+    MatTabsModule
   ],
 
   exports: [
@@ -40,7 +44,8 @@ import { CardCardioComponent } from './components/card-cardio/card-cardio.compon
     BancosComponent,
     MaquinasComponent,
     CardComponent,
-    CardBancosComponent
+    CardBancosComponent,
+    MatTabsModule
     
   ]
 })
