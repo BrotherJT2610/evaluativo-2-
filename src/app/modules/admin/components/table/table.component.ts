@@ -18,6 +18,11 @@ export class TableComponent {
   // Variable va a tomar el producto que nosotros elijamos
   productoSeleccionado!: Producto; // <- recibe valores vacíos
 
+  nombreImagen!: string; // Obtendrá el nombre de la imagen
+
+
+  imagen!: string; // Obtendrá la ruta de la imagen
+
   // Definimos formulario para los productos
   /**
    * Atributos alfanuméricos (string) se inicializan con comillas simples
@@ -28,13 +33,13 @@ export class TableComponent {
     precio: new FormControl(0, Validators.required),
     descripcion: new FormControl('', Validators.required),
     categoria: new FormControl('', Validators.required),
-    imagen: new FormControl('', Validators.required),
+    //imagen: new FormControl('', Validators.required),
     alt: new FormControl('', Validators.required)
   })
 
-  constructor(public servicioCrud: CrudService){}
+  constructor(public servicioCrud: CrudService) { }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     // subscribe -> notifica constantemente los cambios actuales del sistema
     this.servicioCrud.obtenerProducto().subscribe(producto => {
       // guarda la información recibida como un nuevo "producto" a la colección
@@ -42,9 +47,9 @@ export class TableComponent {
     })
   }
 
-  async agregarProducto(){
+  async agregarProducto() {
     // validamos los valores del producto agregado
-    if(this.producto.valid){
+    if (this.producto.valid) {
       let nuevoProducto: Producto = {
         // idProducto no se toma porque es generado por la BD y no por el usuario
         idProducto: '',
@@ -53,43 +58,46 @@ export class TableComponent {
         descripcion: this.producto.value.descripcion!,
         precio: this.producto.value.precio!,
         categoria: this.producto.value.categoria!,
-        imagen: this.producto.value.imagen!,
+        // imagen ahora tomara la URL generada desde Storage
+        imagen: '',
         alt: this.producto.value.alt!
       }
 
-      await this.servicioCrud.crearProducto(nuevoProducto)
-      .then(producto => {
-        Swal.fire({
-          title: "Bien Hecho!",
-          text: "Ha agregado un nuevo producto con éxito!",
-          icon: "success"
-        });
-        // Limpiamos formulario para agregar nuevos productos
-        this.producto.reset();
-      })
-      .catch(error => {
-        Swal.fire({
-          title: "ERROR",
-          text: "Hubo un problema al agregar un nuevo producto",
-          icon: "error"
-        });
-        this.producto.reset();
-      })
+      // Enviamos nombre y url de la imagen; definimos carpeta de imágenes como "productos"
+      await this.servicioCrud.subirImagen(this.nombreImagen, this.imagen, "productos")
+        .then(resp => {
+          // Encapsulamos respuesta y envíamos la información obtenida
+          this.servicioCrud.obtenerUrlImagen(resp)
+            .then(url => {
+              // Ahora método crearProducto recibe los datos del formulario y la URL formateada
+              this.servicioCrud.crearProducto(nuevoProducto, url)
+                .then(producto => {
+                  alert("Ha agregado un nuevo producto con éxito :)");
+                  // Limpiamos formulario para agregar nuevos productos
+                  this.producto.reset();
+                })
+                .catch(error => {
+                  alert("Hubo un problema al agregar un nuevo producto :(");
+                  this.producto.reset();
+                })
+            })
+        })
     }
   }
 
-    // Función para alertar al usuario del producto que desea eliminar
-    mostrarBorrar(productoSeleccionado: Producto){
-      // abre el modal
-      this.modalVisibleProducto = true;
-  
-      // toma los valores del producto elegido
-      this.productoSeleccionado = productoSeleccionado;
-    }
-  
-    // Función para eliminar definitivamente al producto
-    borrarProducto(){
-      this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto)
+  // Función para alertar al usuario del producto que desea eliminar
+  mostrarBorrar(productoSeleccionado: Producto) {
+    // abre el modal
+    this.modalVisibleProducto = true;
+
+    // toma los valores del producto elegido
+    this.productoSeleccionado = productoSeleccionado;
+  }
+
+  // Función para eliminar definitivamente al producto
+  borrarProducto() {
+     // Envía ID del producto eliminado y la ubicación en el almacenamiento de STORAGE
+     this.servicioCrud.eliminarProducto(this.productoSeleccionado.idProducto, this.productoSeleccionado.imagen)
       .then(respuesta => {
         Swal.fire({
           title: "Hecho!",
@@ -100,14 +108,14 @@ export class TableComponent {
       .catch(error => {
         Swal.fire({
           title: "ERROR",
-          text: "No se ha podido eliminar el producto \n"+error,
+          text: "No se ha podido eliminar el producto \n" + error,
           icon: "error"
         });
       })
-    }
+  }
 
-    // Función para seleccionar el producto a editar
-  mostrarEditar(productoSeleccionado: Producto){
+  // Función para seleccionar el producto a editar
+  mostrarEditar(productoSeleccionado: Producto) {
     this.productoSeleccionado = productoSeleccionado;
 
     // Enviar o "setear" los nuevos valores y reasignarlos a las variables
@@ -117,12 +125,12 @@ export class TableComponent {
       precio: productoSeleccionado.precio,
       descripcion: productoSeleccionado.descripcion,
       categoria: productoSeleccionado.categoria,
-      imagen: productoSeleccionado.imagen,
+      //imagen: productoSeleccionado.imagen,
       alt: productoSeleccionado.alt
     })
   }
 
-  editarProducto(){
+  editarProducto() {
     let datos: Producto = {
       // Solo el ID toma y deja igual su valor
       idProducto: this.productoSeleccionado.idProducto,
@@ -130,26 +138,83 @@ export class TableComponent {
       precio: this.producto.value.precio!,
       descripcion: this.producto.value.descripcion!,
       categoria: this.producto.value.categoria!,
-      imagen: this.producto.value.imagen!,
+      /* Imagen toma información desde el servicio, no del formulario */
+      imagen: this.productoSeleccionado.imagen,
       alt: this.producto.value.alt!
     }
 
+       // Verificamos que el usuario ingrese una nueva imagen o no
+       if(this.imagen){
+        this.servicioCrud.subirImagen(this.nombreImagen, this.imagen, "productos")
+        .then(resp => {
+          this.servicioCrud.obtenerUrlImagen(resp)
+          .then(url => {
+            // Actualizamos URL de la imagen en los datos del formulario
+            datos.imagen = url;
+            // Actualizamos los datos desde el formulario de edición
+            this.actualizarProducto(datos);
+            // Vaciamos casillas del formulario
+            this.producto.reset();
+          })
+          .catch(error => {
+            alert ("Hubo un problema al subir la imagen :( \n"+error);
+            this.producto.reset();
+          })
+        })
+      }else{
+        /*
+          Actualizamos formulario con los datos recibidos del usuario, pero sin modificar la
+          imagen ya existente en Firestore y Storage
+        */
+        this.actualizarProducto(datos);
+      }
+    }
+    // ACTUALIZA la información ya existente de los productos
+    actualizarProducto(datos: Producto){
+
     this.servicioCrud.modificarProducto(this.productoSeleccionado.idProducto, datos)
-    .then(producto => {
-      Swal.fire({
-        title: "Bien ahí!",
-        text: "El producto fue modificado con éxito.",
-        icon: "success"
-      });
-      
-    })
-    .catch(error => {
-      alert("Hubo un problema al modificar el producto.");
-      Swal.fire({
-        title: "ERROR",
-        text: "Hubo un problema al modificar el producto.",
-        icon: "error"
-      });
-    })
+      .then(producto => {
+        Swal.fire({
+          title: "Bien ahí!",
+          text: "El producto fue modificado con éxito.",
+          icon: "success"
+        });
+
+      })
+      .catch(error => {
+        alert("Hubo un problema al modificar el producto.");
+        Swal.fire({
+          title: "ERROR",
+          text: "Hubo un problema al modificar el producto.",
+          icon: "error"
+        });
+      })
+  }
+
+  // Método para CARGAR IMÁGENES
+  cargarImagen(event: any){
+    // Variable para obtener el archivo subido desde el input del HTML
+    let archivo = event.target.files[0];
+    // Variable para crear un nuevo objeto de tipo "archivo" o "file" y poder leerlo
+    let reader = new FileReader();
+    if (archivo != undefined){
+      /*
+        Llamamos a método readAsDataUrl para leer toda la información recibida.
+        Enviamos como parámetro el archivo porque será el encargado de tener la info. 
+        ingresada por el usuario
+      */
+      reader.readAsDataURL(archivo);
+      // Definimos qué haremos con la información mediante función flecha
+      reader.onloadend = () => {
+        let url = reader.result;
+        // Verificamos que la URL sea existente y diferente a "nula"
+        if(url != null){
+          // Definimos nombre de la imagen con atributo "name" del input
+          this.nombreImagen = archivo.name;
+          // Definimos ruta de la imagen según URL recibida en formato cadena (string)
+          this.imagen = url.toString();
+        }
+      }
+    }
   }
 }
