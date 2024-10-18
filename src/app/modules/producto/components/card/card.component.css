@@ -152,3 +152,12 @@
 .modal-footer .btn-secondary:hover {
     background-color: #aaaaaa; /* Color del botón secundario al hacer hover */
 }
+
+
+
+
+.col-lg-12{
+    justify-content: center;
+    display: flex;
+    
+}
