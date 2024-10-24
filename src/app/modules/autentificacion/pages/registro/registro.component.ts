@@ -25,7 +25,7 @@ export class RegistroComponent {
     nombre: '',
     apellido: '',
     email: '',
-    rol: '',
+    rol: 'vis', // -> designamos un rol por defecto para los usuarios que se registren
     password: ''
   }
 

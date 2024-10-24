@@ -11,7 +11,7 @@ export class CarruselComponent {
   product: string = '';
   //Coleccion de productos añadidos a la lista
   productosCarrusel: Producto[] = [];
-  juguete:boolean = false;
+  bancos:boolean = false;
   general:boolean = true;
   productoAnadido(producto: Producto) {
     //Modificador del valor de 'product'
