@@ -72,12 +72,21 @@ export class TableComponent {
               // Ahora método crearProducto recibe los datos del formulario y la URL formateada
               this.servicioCrud.crearProducto(nuevoProducto, url)
                 .then(producto => {
-                  alert("Ha agregado un nuevo producto con éxito :)");
+                  Swal.fire({
+                    title: "Hecho!",
+                    text: "Ha agregado un nuevo producto con éxito",
+                    icon: "success"
+                  });
                   // Limpiamos formulario para agregar nuevos productos
                   this.producto.reset();
                 })
                 .catch(error => {
                   alert("Hubo un problema al agregar un nuevo producto :(");
+                  Swal.fire({
+                    title: "ERROR",
+                    text: "Hubo un problema al agregar un nuevo producto",
+                    icon: "error"
+                  });
                   this.producto.reset();
                 })
             })
