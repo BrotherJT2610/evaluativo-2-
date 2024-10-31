@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { CrudService } from'src/app/modules/admin/services/crud.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -48,6 +49,16 @@ export class CardComponent {
      this.modalVisible = true;
  
      this.productoSeleccionado = info;
+   }
+
+   mostrarAlerta() {
+     Swal.fire({
+      title: "¡Ocurrió un Error! ",
+      text: "Boton en Reparación",
+      icon: "info"
+
+      
+    });
    }
 }
 
