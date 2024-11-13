@@ -23,13 +23,32 @@ h1 {
     color: transparent; /* Hace que el color del texto sea transparente, permitiendo que el gradiente sea visible */
     transition: color 0.3s ease, text-shadow 0.3s ease; /* Añade una transición suave para el color y la sombra del texto */
     animation: gradient-animation 5s infinite; /* Añade una animación de gradiente */
-    cursor: default; 
+    cursor: default;
 }
 
 /* Efecto al pasar el cursor sobre el h1 */
 h1:hover {
     color: #333333; /* Cambia el color del texto a gris oscuro */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Añade una sombra al texto */
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 700px) {
+    h1 {
+        font-size: 2em; /* Reduce el tamaño de la fuente a 2em en pantallas pequeñas */
+        padding: 0.8rem; /* Reduce el padding para ajustarse mejor a la pantalla */
+        letter-spacing: 1.5px; /* Reduce el espaciado entre letras */
+    }
+}
+
+/* Para pantallas muy pequeñas (ej. celulares en orientación vertical) */
+@media (max-width: 400px) {
+    h1 {
+        font-family: fantasy;
+        font-size: 1.5em; /* Reduce aún más el tamaño de la fuente */
+        padding: 0.6rem; /* Ajusta el padding para no sobrecargar la pantalla */
+        letter-spacing: 1px; /* Reduce el espaciado entre letras aún más */
+    }
 }
 
 
@@ -80,16 +99,41 @@ h1:hover {
 
 /*#################################### ESTILOS PARA imagen1 ####################################*/
 
-.imagen1 {
-    background-color: black;
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;    /* Centra verticalmente */
-    height: 30vh;         /* Ajusta la altura según sea necesario */
+/* Dispositivos más grandes (ej.: computadora) */
+@media (min-width: 700px) {
+    .imagen1 {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center;    /* Centra verticalmente */
+        height: 30vh;           /* Ajusta la altura según sea necesario */
+        background-color: black;
+    }
+
+    .imagen1 img {
+        max-width: 600px; /* Ajusta este valor al tamaño máximo de las imágenes */
+        width: 100%;      /* Asegura que la imagen no exceda el contenedor */
+        height: auto;     /* Mantiene la relación de aspecto */
+    }
 }
 
-.imagen1 img {
-    max-width: 600px; /* Ajusta este valor al tamaño deseado */
-    width: 100%;      /* Asegura que la imagen no exceda el contenedor */
-    height: auto;    /* Mantiene la relación de aspecto */
+
+
+
+/* Dispositivos pequeños (ej.: celular) */
+@media (min-width: 300px) and (max-width: 700px) {
+    .imagen1 {
+        display: flex;                /* Mantiene las imágenes en línea (horizontal) */
+        justify-content: center;      /* Centra las imágenes horizontalmente */
+        align-items: center;          /* Centra las imágenes verticalmente */
+        height: 10vh;                 /* Mantiene la altura del contenedor */
+        background-color: black;
+        gap: 10px;                    /* Añade espacio entre las imágenes */
+        padding: 10px;                /* Añadir relleno en los lados */
+    }
+
+    .imagen1 img {
+        width: 45%;                   /* Las imágenes ocuparán el 45% del contenedor, con espacio entre ellas */
+        margin-bottom: 10px; /* Añadir un espacio entre las imágenes */
+        height: auto;                 /* Mantiene la relación de aspecto */
+    }
 }

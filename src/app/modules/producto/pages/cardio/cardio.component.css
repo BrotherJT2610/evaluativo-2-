@@ -6,7 +6,25 @@
 }
 
 
-.gif {
-    text-align: center;
-    margin-top: 20px;
+/* Dispositivos más grandes (ej.: computadora) */
+@media (min-width: 700px) {
+    .gif {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+
+/* Dispositivos pequeños (ej.: celular) */
+@media (min-width: 300px) and (max-width: 700px) {
+    .gif {
+        text-align: center;
+        margin-top: 10px; /* Reduce el margen superior para pantallas pequeñas */
+        padding: 0 10px; /* Añade un pequeño relleno a los lados */
+    }
+
+    .gif img {
+        width: 90%; /* Ajusta el ancho del GIF para que no se desborde en pantallas pequeñas */
+        height: auto; /* Mantiene la proporción del GIF */
+    }
 }
