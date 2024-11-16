@@ -28,6 +28,9 @@ const routes: Routes = [
     // Especificamos que la ruta de administrador va a ser protegida con un guardián
     // Y espera un rol de tipo "admin"
     canActivate: [ rutaProtegidaGuard ], data: { role: 'admin' }
+    },
+    {
+      path:"",loadChildren:()=>import('./modules/nosotros/nosotros.module').then(m=>m.NosotrosModule)
     }
 ];
 

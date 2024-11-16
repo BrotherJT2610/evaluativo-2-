@@ -3,15 +3,16 @@
     <mat-icon>menu</mat-icon>
   </button>
 
+  <!--responsive -->
   <mat-menu #secciones="matMenu">
     <button mat-menu-item routerLink="/inicio">Inicio</button>
+    <button mat-menu-item routerLink="/nosotros">Sobre Nosotros</button>
     <button mat-menu-item [matMenuTriggerFor]="producto">Productos</button>
   </mat-menu>
 
   <span><img class="logo" src="./assets/logo_piola2.png"></span>
-  <button id="menuInicio" mat-button routerLink="/inicio">
-    <div class="boton_inicio">Inicio</div>
-  </button>
+  
+  <button id="menuInicio" mat-button routerLink="/inicio"> <div class="boton_inicio">Inicio</div> </button>
 
   <!-- Menu desplegable: SECCION DE PRODUCTOS -->
   <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
@@ -21,6 +22,9 @@
     <button mat-menu-item routerLink="/bancos">Bancos</button>
     <button mat-menu-item routerLink="/cardio">Cardio</button>
   </mat-menu>
+
+  <button id="menuInicio" mat-button routerLink="/nosotros"><div class="boton_inicio">Sobre Nosotros</div></button>
+
 
   <span class="example-spacer"></span>
 
