@@ -16,7 +16,6 @@ import { CardComponent } from './components/card/card.component';
 import { CardBancosComponent } from './components/card-bancos/card-bancos.component';
 import { CardMaquinasComponent } from './components/card-maquinas/card-maquinas.component';
 import { CardCardioComponent } from './components/card-cardio/card-cardio.component';
-import { CarruselComponent } from './components/carrusel/carrusel.component';
 
 
 @NgModule({
@@ -29,7 +28,7 @@ import { CarruselComponent } from './components/carrusel/carrusel.component';
     CardBancosComponent,
     CardMaquinasComponent,
     CardCardioComponent,
-    CarruselComponent
+    
     
   ],
   imports: [
