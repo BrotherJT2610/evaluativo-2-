@@ -1,138 +1,142 @@
-/* From Uiverse.io by MikeAndrewDesigner */ 
+/* Estilo para el contenedor principal */
 .container{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+  display: flex; /* Hace que el contenido se organice en una fila */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  margin-top: 50px; /* Añade un margen superior de 50px */
+  margin-bottom: 50px; /* Añade un margen inferior de 50px */
 }
+
+/* Estilo para las filas dentro del contenedor */
 .row{
-    text-align: center;
+  text-align: center; /* Centra el texto */
 }
+
+/* Estilo principal para el formulario de login */
 .login {
-    width: 340px;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    background: #2c2c2c;
-    padding: 47px;
-    padding-bottom: 57px;
-    color: #fff;
-    border-radius: 17px;
-    padding-bottom: 50px;
-    font-size: 1.3em;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  width: 340px; /* Ancho del formulario */
+  height: 600px; /* Altura del formulario */
+  display: flex; /* Usa flexbox para su contenido interno */
+  justify-content: center; /* Centra el contenido del formulario */
+  background: #2c2c2c; /* Color de fondo gris oscuro */
+  padding: 47px; /* Espacio interior alrededor del contenido */
+  padding-bottom: 57px; /* Espacio interior adicional en la parte inferior */
+  color: #fff; /* Color del texto en blanco */
+  border-radius: 17px; /* Bordes redondeados */
+  font-size: 1.3em; /* Tamaño del texto */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Tipo de letra */
+}
+
+/* Estilo para los campos de texto y contraseña */
+.login input[type="text"],
+.login input[type="password"] {
+  display: block; /* Se muestran como bloques */
+  border: none; /* Sin bordes */
+  outline: none; /* Sin contorno al enfocar */
+  width: 100%; /* Ocupan el ancho completo disponible */
+  padding: 13px 18px; /* Espacio interior (padding) */
+  margin-top: 20px; /* Margen superior */
+  font-size: 0.8em; /* Tamaño del texto */
+  border-radius: 100px; /* Bordes muy redondeados */
+  background: #3c3c3c; /* Fondo gris oscuro */
+  color: #fff; /* Texto en blanco */
+}
+
+/* Animación para cuando los campos están enfocados */
+.login input:focus {
+  animation: bounce 1s; /* Aplica una animación llamada 'bounce' durante 1 segundo */
+}
+
+/* Estilo para los botones de enviar, los otros botones y el título h1 */
+.login input[type=submit],
+.login input[type=button],
+.h1 {
+  border: 0; /* Sin bordes */
+  outline: 0; /* Sin contorno al enfocar */
+  width: 100%; /* Ocupan el ancho completo disponible */
+  padding: 13px; /* Espacio interior */
+  margin-top: 40px; /* Margen superior */
+  border-radius: 500px; /* Bordes muy redondeados */
+  font-weight: 600; /* Texto en negrita */
+  animation: bounce2 1.6s; /* Aplica una animación llamada 'bounce2' durante 1.6 segundos */
+}
+
+/* Estilo específico para el título h1 */
+.h1 {
+  margin-bottom: 0; /* Sin margen inferior */
+  font-size: 1.3em; /* Tamaño del texto */
+}
+
+/* Estilo para el botón */
+.btn {
+  background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb); /* Fondo con degradado de colores */
+  color: #fff; /* Texto en blanco */
+  padding: 16px; /* Espacio interior */
+  margin-top: 20px; /* Margen superior */
+  border-radius: 50px; /* Bordes redondeados */
+}
+
+/* Cambios en el botón al pasar el ratón por encima */
+.btn:hover {
+  background: linear-gradient(144deg, #1e1e1e, 20%, #1e1e1e 50%, #1e1e1e); /* Fondo con degradado de colores oscuros */
+  color: #fff; /* Texto en blanco */
+  cursor: pointer; /* Cambia el cursor a una mano (pointer) */
+  transition: all 0.4s ease; /* Transición suave para los cambios */
+}
+
+/* Estilo específico para los inputs de texto */
+.login input[type=text] {
+  animation: bounce 1s; /* Aplica una animación llamada 'bounce' durante 1 segundo */
+}
+
+/* Estilo específico para los inputs de contraseña */
+.login input[type=password] {
+  animation: bounce1 1.3s; /* Aplica una animación llamada 'bounce1' durante 1.3 segundos */
+}
+
+/* Estilo específico para elementos con clase 'ui' */
+.ui {
+  font-weight: bolder; /* Texto más grueso (negrita) */
+  background: -webkit-linear-gradient(#B563FF, #535EFC, #0EC8EE); /* Fondo con degradado */
+  -webkit-background-clip: text; /* Fondo aplicado solo al texto */
+  -webkit-text-fill-color: transparent; /* Texto transparente */
+  border-bottom: 4px solid transparent; /* Borde inferior transparente */
+  border-image: linear-gradient(0.25turn, #535EFC, #0EC8EE, #0EC8EE); /* Imagen de borde degradada */
+  border-image-slice: 1; /* Divide la imagen del borde */
+  display: inline; /* Se muestra en línea */
+}
+
+/* Adaptaciones para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+  .login {
+      width: 70%; /* Ancho del 70% del contenedor padre */
+      padding: 3em; /* Espacio interior */
   }
-  
-  .login input[type="text"],
-  .login input[type="password"] {
-    opacity: 1;
-    display: block;
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: 13px 18px;
-    margin: 20px 0 0 0;
-    font-size: 0.8em;
-    border-radius: 100px;
-    background: #3c3c3c;
-    color: #fff;
+}
+
+/* Definición de animaciones */
+@keyframes bounce {
+  0% {
+      transform: translateY(-250px); /* Se mueve hacia arriba */
+      opacity: 0; /* Totalmente transparente */
   }
-  
-  .login input:focus {
-    animation: bounce 1s;
-    -webkit-appearance: none;
+}
+
+@keyframes bounce1 {
+  0% {
+      opacity: 0; /* Totalmente transparente */
   }
-  
-  .login input[type=submit],
-  .login input[type=button],
-  .h1 {
-    border: 0;
-    outline: 0;
-    width: 100%;
-    padding: 13px;
-    margin: 40px 0 0 0;
-    border-radius: 500px;
-    font-weight: 600;
-    animation: bounce2 1.6s;
+  40% {
+      transform: translateY(-100px); /* Se mueve hacia arriba */
+      opacity: 0; /* Totalmente transparente */
   }
-  
-  .h1 {
-    padding: 0;
-    position: relative;
-    top: -35px;
-    display: block;
-    margin-bottom: -0px;
-    font-size: 1.3em;
+}
+
+@keyframes bounce2 {
+  0% {
+      opacity: 0; /* Totalmente transparente */
   }
-  
-  .btn {
-    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
-    color: #fff;
-    padding: 16px !important;
-    margin-top: 20px;
-    border-radius: 50px;
+  70% {
+      transform: translateY(-20px); /* Se mueve ligeramente hacia arriba */
+      opacity: 0; /* Totalmente transparente */
   }
-  
-  .btn:hover {
-    background: linear-gradient(144deg, #1e1e1e , 20%,#1e1e1e 50%,#1e1e1e );
-    color: rgb(255, 255, 255);
-    padding: 16px !important;
-    cursor: pointer;
-    transition: all 0.4s ease;
-  }
-  
-  .login input[type=text] {
-    animation: bounce 1s;
-    -webkit-appearance: none;
-  }
-  
-  .login input[type=password] {
-    animation: bounce1 1.3s;
-  }
-  
-  .ui {
-    font-weight: bolder;
-    background: -webkit-linear-gradient(#B563FF, #535EFC, #0EC8EE);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-bottom: 4px solid transparent;
-    border-image: linear-gradient(0.25turn, #535EFC, #0EC8EE, #0EC8EE);
-    border-image-slice: 1;
-    display: inline;
-  }
-  
-  @media only screen and (max-width: 600px) {
-    .login {
-      width: 70%;
-      padding: 3em;
-    }
-  }
-  
-  @keyframes bounce {
-    0% {
-      transform: translateY(-250px);
-      opacity: 0;
-    }
-  }
-  
-  @keyframes bounce1 {
-    0% {
-      opacity: 0;
-    }
-  
-    40% {
-      transform: translateY(-100px);
-      opacity: 0;
-    }
-  }
-  
-  @keyframes bounce2 {
-    0% {
-      opacity: 0;
-    }
-  
-    70% {
-      transform: translateY(-20px);
-      opacity: 0;
-    }
-  }
+}
