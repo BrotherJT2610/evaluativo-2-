@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/modules/autentificacion/services/auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -43,5 +44,15 @@ export class NavbarComponent {
         label_toggle!.innerHTML ='<i class="fa-solid fa-moon iconoPiola oscuro"></i>'
       }
     }
+  }
+
+  mostrarAlerta() {
+    Swal.fire({
+      title: "¡Ocurrió un Error! ",
+      text: "Boton en Reparación",
+      icon: "info"
+
+
+    });
   }
 }

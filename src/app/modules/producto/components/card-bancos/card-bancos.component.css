@@ -81,3 +81,83 @@
         margin-bottom: 2rem;
     }
 }
+
+
+/* ESTILOS PERSONALIZADOS PARA EL MODAL */
+.modal-content {
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
+}
+
+.modal-header {
+    background-color: #7676FF; /* Color de fondo para el encabezado */
+    color: white; /* Color del texto en el encabezado */
+    border-bottom: none; /* Sin borde inferior */
+    padding: 1.5rem; /* Espaciado interno */
+}
+
+.modal-title {
+    font-size: 1.75rem; /* Tamaño de fuente más grande para el título */
+    margin: 0; /* Sin margen */
+}
+
+.btn-close {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    color: white; /* Color del icono de cierre */
+    font-size: 1.25rem; /* Tamaño del icono de cierre */
+}
+
+.modal-body {
+    padding: 2rem; /* Espaciado interno */
+    text-align: center; /* Centra el contenido */
+}
+
+.modal-body img {
+    max-width: 100%; /* La imagen se ajusta al ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    margin-bottom: 1rem; /* Espacio debajo de la imagen */
+}
+
+.modal-footer {
+    background-color: #f1f1f1; /* Color de fondo para el pie del modal */
+    border-top: none; /* Sin borde superior */
+    padding: 1.5rem; /* Espaciado interno */
+    display: flex; /* Flexbox para alinear los botones */
+    justify-content: space-between; /* Espacio entre los botones */
+}
+
+.modal-footer .btn {
+    border-radius: 25px; /* Bordes redondeados para los botones */
+    padding: 0.7rem 1.5rem; /* Relleno para los botones */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.modal-footer .btn-primary {
+    background-color: #7676FF; /* Color del botón principal */
+    border: none; /* Sin borde */
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #5757d1; /* Color del botón principal al hacer hover */
+}
+
+.modal-footer .btn-secondary {
+    background-color: #cccccc; /* Color del botón secundario */
+    border: none; /* Sin borde */
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #aaaaaa; /* Color del botón secundario al hacer hover */
+}
+
+
+
+
+.col-lg-12{
+    justify-content: center;
+    display: flex;
+    
+}

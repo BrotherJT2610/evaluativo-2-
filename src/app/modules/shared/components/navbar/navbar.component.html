@@ -37,11 +37,7 @@
     <button mat-menu-item (click)="cerrarSesion()" *ngIf="deslogueado">Cerrar Sesión</button>
   </mat-menu>
 
-  <button mat-icon-button class="example-icon favorite-icon iconoPiola"
-    aria-label="Example icon-button with heart icon">
-    <mat-icon class="iconoPiola"><i class="fa-solid fa-cart-shopping"></i></mat-icon>
-  </button>
-
+  <button mat-icon-button class="example-icon favorite-icon iconoPiola" aria-label="Example icon-button with heart icon" (click)="mostrarAlerta()"> <mat-icon class="iconoPiola"><i class="fa-solid fa-cart-shopping"></i></mat-icon> </button>
   <!--Label Para Modo Oscuro-->
   <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon iconoPiola oscuro"></i></label>
   <input type="checkbox" id="toggle" (click)="cambiarFondo()">
