@@ -33,13 +33,10 @@ export class InicioSesionComponent {
 
   // Función para el inicio de sesión
   async iniciarSesion() {
-
     const credenciales = {
       email: this.usuarioIngresado.email,
       password: this.usuarioIngresado.password
     }
-
-
 
     try {
       // Obtenemos el usuario desde la BD -> Cloud Firestore

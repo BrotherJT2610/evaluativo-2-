@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
 // Servicio de AUTENTIFICACIÓN de FIREBASE
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-
 // Servicio de COLECCIONES de FIREBASE
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-
 // Observará los cambios
 import { Observable } from 'rxjs';
-
 // Itera la colección leyendo su información actual
 import { map } from 'rxjs/operators';
 
@@ -83,4 +80,5 @@ export class AuthService {
   obtenerRolUsuario(): string | null {
     return this.rolUsuario;
   }
+  
 }

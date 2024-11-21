@@ -4,46 +4,38 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     color: #333333;
-    /* Color de texto más oscuro para mejorar la legibilidad */
     background-color: #f4f4f4;
-    /* Fondo claro para todo el cuerpo */
 }
 
 /* Sección Sobre Nosotros */
 #sobre-nosotros {
     position: relative;
-    height: 100vh;
+    min-height: 100vh; /* Altura mínima en lugar de fija */
     background: url('https://images.pexels.com/photos/791763/pexels-photo-791763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* Cambiado para manejar múltiples párrafos */
+    overflow: auto; /* Agregar scroll si el contenido excede la altura */
 }
 
 #sobre-nosotros .overlay {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    /* Fondo claro con transparencia */
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Mayor opacidad */
+    padding: 40px; /* Mayor espacio interno */
     border-radius: 10px;
-    max-width: 800px;
-    color: #333333;
-    /* Color de texto para la sección */
+    max-width: 90%; /* Adaptable a pantallas más pequeñas */
+    color: #222222; /* Texto más oscuro para mejor contraste */
 }
 
 #sobre-nosotros h1 {
     font-size: 3em;
     font-weight: bold;
     margin-bottom: 40px;
-    /* Espacio adicional debajo del título */
     margin-top: 20px;
-    /* Espacio adicional encima del título */
     text-transform: uppercase;
-    color: #7676FF;
-    /* Color azul según solicitado */
+    color: #3F51B5; /* Azul más oscuro para mayor contraste */
     line-height: 1;
-    /* Espacio entre líneas del título */
 }
 
 #sobre-nosotros p {
@@ -51,40 +43,36 @@ body {
     line-height: 1.8;
     margin-bottom: 20px;
     color: #555555;
-    /* Color gris oscuro para el texto */
 }
 
 /* Dispositivos móviles */
 @media (min-width: 300px) and (max-width: 700px) {
     #sobre-nosotros {
-        height: auto;
+        min-height: auto; /* Ajuste automático en móviles */
         padding: 20px 0;
     }
 
     #sobre-nosotros h1 {
         font-size: 1.5em;
-        /* Tamaño más pequeño para el título */
         margin-bottom: 20px;
         margin-top: 10px;
     }
 
     #sobre-nosotros p {
         font-size: 0.9em;
-        /* Tamaño más pequeño para el texto */
         margin-bottom: 10px;
     }
 
     #sobre-nosotros .overlay {
         padding: 15px;
         max-width: 90%;
-        /* Achicado el contenedor para dispositivos móviles */
     }
 }
 
-/* Dispositivos más grandes (ej.: computadora) */
+/* Dispositivos más grandes */
 @media (min-width: 700px) {
-    #sobre-nosotros {
-        height: 100vh;
+    #sobre-nosotros .overlay {
+        max-width: 800px; /* Más espacio en pantallas grandes */
     }
 
     #sobre-nosotros h1 {
@@ -93,10 +81,5 @@ body {
 
     #sobre-nosotros p {
         font-size: 1.2em;
-    }
-
-    #sobre-nosotros .overlay {
-        max-width: 600px;
-        /* Achicado el contenedor para dispositivos grandes */
     }
 }

@@ -41,8 +41,8 @@ export class RegistroComponent {
 
   // FUNCIÓN ASINCRONICA PARA EL REGISTRO
   async registrar(){
-    // CREDENCIALES = información que ingrese el usuario
     
+    // CREDENCIALES = información que ingrese el usuario
     const credenciales = {
       email: this.usuarios.email,
       password: this.usuarios.password
